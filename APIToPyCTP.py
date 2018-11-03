@@ -29,7 +29,7 @@ def structtrue(filename):
         struct = i.groupdict()
         ret[struct['name']] = dict(type='#define', value=struct['value'])
         #print("#define [{0}] [{1}]".format(struct['name'], struct['value']))
-    
+
     ## typedef
     iterater = re.finditer(r"[\n^]\s*typedef\s+(?P<value>[ \w\t]+[ \t\*])(?P<name>[a-zA-Z]\w*)([ \t]*\[[ \t]*(?P<length>\d+)[ \t]*\])?\s*;", sourcecode)
     for i in iterater:
@@ -46,7 +46,7 @@ def structtrue(filename):
         struct = i.groupdict()
         ret[struct['name']] = dict(type='struct', value=structmembertrue(struct['body']))
     return ret
-    
+
 
 codetree = {}
 codetree.update(structtrue('./v6.3.6_20160606_api_tradeapi_linux64/ThostFtdcUserApiDataType.h'))
@@ -60,7 +60,7 @@ for (key,value) in codetree.items():
         pass
         cppheadercode += "\nPyObject *PyCTP_PyDict_FromStruct(" + key + " *p"+key.replace("CThostFtdc", "")+");"
         cppheadercode += "\nint PyCTP_Struct_FromPyDict(" + key + " *p" + key.replace("CThostFtdc", "") + ", PyObject *dict);"
-        
+
 #print(cppheadercode)
 
 

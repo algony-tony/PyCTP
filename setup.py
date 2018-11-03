@@ -19,15 +19,15 @@ optional = {}
 if platform.system() == 'Linux':
     optional['extra_compile_args'] = ['-std=c++11']
     optional['runtime_library_dirs'] = ['./']
-    optional['include_dirs']=['./v6.3.6_20160606_api_tradeapi_linux64']
-    optional['library_dirs']=['./v6.3.6_20160606_api_tradeapi_linux64']
+    optional['include_dirs']=['./v6.3.11_20180109_api_tradeapi_linux64']
+    optional['library_dirs']=['./v6.3.11_20180109_api_tradeapi_linux64']
 #    depend_dynamics = ['libthostmduserapi.so', 'libthosttraderapi.so']
 if platform.system() == 'Windows':
-    optional['include_dirs'] = ['./v6.3.6_20160606_tradeapi_windows']
-    optional['library_dirs'] = ['./v6.3.6_20160606_tradeapi_windows']
+    optional['include_dirs'] = ['./v6.3.11_20180109_tradeapi_windows']
+    optional['library_dirs'] = ['./v6.3.11_20180109_tradeapi_windows']
     if '64 bit' in platform.python_compiler():
-        optional['include_dirs'] = ['./v6.3.6_20160606_tradeapi64_windows']
-        optional['library_dirs'] = ['./v6.3.6_20160606_tradeapi64_windows']
+        optional['include_dirs'] = ['./v6.3.11_20180109_tradeapi64_windows']
+        optional['library_dirs'] = ['./v6.3.11_20180109_tradeapi64_windows']
 #    depend_dynamics = ['thostmduserapi.dll', 'thosttraderapi.dll']
 argments = dict(name='PyCTP',
                 sources=sources,
@@ -39,7 +39,7 @@ argments.update(optional)
 setup(name='PyCTP',
       version='1.0.1',
       description='CTP for Python',
-      long_description='CTP v6.3.6_20160606 for Python',
+      long_description='CTP v6.3.11_20180109 for Python',
       author='Shi Zhuolin',
       author_email='shizhuolin@hotmail.com',
       url='http://www.pyctp.org/',
