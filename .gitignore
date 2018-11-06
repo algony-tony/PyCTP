@@ -1,1 +1,2 @@
-!build/lib*/
+build/temp*
+build/script*
