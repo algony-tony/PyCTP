@@ -6,3 +6,5 @@ CTP for Python
 编译方法 python setup.py build
 
 > 编译指南请参考文件：PyCTP Compile Guide.html
+
+forked from [PyCTP shizhuolin](https://github.com/shizhuolin/PyCTP)
